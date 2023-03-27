@@ -1,0 +1,12 @@
+fileignoreconfig:
+- filename: views/socket.io.js
+  checksum: 1bf82ddcfbe5125b558831fe0e5bdb22e69f3aaf960b2707770b33de381027f6
+- filename: package-lock.json
+  checksum: 99455e24cf3b4ad7c626bf605c0c86e8d9ca9342fa6bc51306be5226658b5bd8
+- filename: docker-compose.test.yml
+  checksum: b6454c6182bd2f053fb2fea9974317146c6bd6d45fcfb8c5ebf1d93ce6aa490b
+- filename: views/index.html
+  checksum: d9ab7382918d34f3c89000587ab687c60f47448650eeae222cb4e0a14e2adde0
+- filename: views/angular.min.js
+  checksum: a1763554a99e50713d7afccb3bfb07e7e12967ab1879fdf35d0d30d9b2545541
+version: ""
