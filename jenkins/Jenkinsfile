@@ -25,7 +25,7 @@ pipeline{
         }
         stage('Package helm chart and push') {
             steps{
-                timeout(time: 15, unit: "SECONDS") {
+                timeout(time: 30, unit: "SECONDS") {
 
                     input message: 'approve the helm push?', ok: 'Yes'
 
@@ -40,6 +40,11 @@ pipeline{
                     helm push helm_result-0.\${new_minor_version}.0.tgz oci://registry-1.docker.io/vikasharya000
                     """
                 }
+                timeout(time: 30, unit: "SECONDS") {
+
+                    input message: 'approve parent chart build', ok: 'Yes'
+                }
+                build job: "voting-app-chart", wait: true
             }
         }
     }
