@@ -35,11 +35,10 @@ pipeline{
                     """
                 }
 
-                build job: "voting-app-chart", wait: true
+                build job: "voting-app-chart", wait: true,parameters: [
+                string(name: 'resultChartVersion', value: "0.${BUILD_NUMBER}.0")
+                ]
             }
         }
     }
 }
-//get version from docker hub
-//update image version in helm chart image(values.yaml), appVersion in chart.yaml 
-//pass parameters to parent job (version)
