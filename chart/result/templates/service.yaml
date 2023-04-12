@@ -9,3 +9,4 @@ spec:
   {{- include "ServiceTemplate" .Values | indent 2}}
   selector:
     tier: result
+    slot: {{.Values.global.productionSlot}}
