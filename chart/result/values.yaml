@@ -1,12 +1,10 @@
-global:
-  green:
-    enabled: false
-  blue:
-    enabled: false
-  productionSlot: blue
+green:
+  image: "vikasharya000/result"
+blue:
+  image: "vikasharya000/result"
+productionSlot: blue
 replicas: 1
 port: 80
-image: "vikasharya000/result"
 #specify container name using containerName key
 containerName: result
 service:
