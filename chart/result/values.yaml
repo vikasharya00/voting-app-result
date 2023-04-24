@@ -1,8 +1,8 @@
 green:
   image: "vikasharya000/result"
 blue:
-  image: "vikasharya000/result"
-productionSlot: blue
+  image: "vikasharya000/result:28"
+productionSlot: green
 replicas: 1
 port: 80
 #specify container name using containerName key
@@ -11,4 +11,5 @@ service:
   type: NodePort
   port: 80
   targetPort: 80
-  nodePort: 31001
+  nodePortLive: 32000
+  nodePortTest: 32001
