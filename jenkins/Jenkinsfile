@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    parameters{
+        string(name: 'rollBackToVersion', defaultValue: '', description: 'provide semantic vote-app-chart version to rollback to in case of failure(optional field)')
+    }
     environment{
         registry="vikasharya000/result"
         dockerImage=""
@@ -48,7 +51,8 @@ pipeline{
                 }
 
                 build job: "voting-app-chart", wait: true,parameters: [
-                string(name: 'resultChartVersion', value: "0.${BUILD_NUMBER}.0")
+                string(name: 'resultChartVersion', value: "0.${BUILD_NUMBER}.0"),
+                string(name: 'rollBackToVersion', value: params.rollBackToVersion)
                 ]
             }
         }
